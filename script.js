@@ -106,8 +106,9 @@ document.querySelectorAll('.tip-btn').forEach(function(btn) {
 document.getElementById('billAmount').addEventListener('input', calculateTip);
 
 // Split controls
+const splitCount = document.getElementById('splitCount');
+
 document.getElementById('splitMinus').addEventListener('click', function() {
-  const splitCount = document.getElementById('splitCount');
   let count = parseInt(splitCount.textContent) || 1;
   if (count > 1) {
     splitCount.textContent = count - 1;
@@ -116,7 +117,6 @@ document.getElementById('splitMinus').addEventListener('click', function() {
 });
 
 document.getElementById('splitPlus').addEventListener('click', function() {
-  const splitCount = document.getElementById('splitCount');
   let count = parseInt(splitCount.textContent) || 1;
   splitCount.textContent = count + 1;
   calculateTip();
