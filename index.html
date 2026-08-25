@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Mini-Tools Collection</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">Mini-Tools</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#color-picker">Color Picker</a></li>
+        <li><a href="#word-counter">Word Counter</a></li>
+        <li><a href="#tip-calculator">Tip Calculator</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home" class="hero">
+      <h1>JS Mini-Tools Collection</h1>
+      <p>Small, useful JavaScript tools with simple explanations. Built to learn, designed to use.</p>
+      <a href="#tools" class="btn">Explore the Tools</a>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <h2>About This Project</h2>
+        <p>Each tool is a standalone interactive widget built with plain HTML, CSS, and JavaScript. No frameworks, no libraries — just the fundamentals. Click through the sections to see how each one works, then try the code yourself.</p>
+      </div>
+    </section>
+
+    <section id="tools" class="tools">
+      <div class="container">
+        <div class="tools-grid">
+
+          <div class="tool-card" id="color-picker">
+            <h2>&#127912; Color Picker</h2>
+            <p class="tool-desc">Pick any color and instantly get its HEX, RGB, and HSL values. Great for quick design work.</p>
+            <div class="tool-body">
+              <input type="color" id="colorInput" value="#4fc3f7">
+              <div class="color-preview" id="colorPreview"></div>
+              <div class="color-values">
+                <div class="value-row">
+                  <label for="hexValue">HEX</label>
+                  <input type="text" id="hexValue" readonly>
+                </div>
+                <div class="value-row">
+                  <label for="rgbValue">RGB</label>
+                  <input type="text" id="rgbValue" readonly>
+                </div>
+                <div class="value-row">
+                  <label for="hslValue">HSL</label>
+                  <input type="text" id="hslValue" readonly>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tool-card" id="word-counter">
+            <h2>&#128221; Word Counter</h2>
+            <p class="tool-desc">Paste or type text to instantly count words, characters, and estimated reading time.</p>
+            <div class="tool-body">
+              <textarea id="textInput" placeholder="Start typing or paste your text here..." rows="6"></textarea>
+              <div class="stats-row">
+                <div class="stat">
+                  <span class="stat-number" id="wordCount">0</span>
+                  <span class="stat-label">Words</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number" id="charCount">0</span>
+                  <span class="stat-label">Characters</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number" id="sentenceCount">0</span>
+                  <span class="stat-label">Sentences</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number" id="readTime">0s</span>
+                  <span class="stat-label">Read Time</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tool-card" id="tip-calculator">
+            <h2>&#128176; Tip Calculator</h2>
+            <p class="tool-desc">Enter your bill amount and choose a tip percentage. Split between friends if needed.</p>
+            <div class="tool-body">
+              <div class="calc-row">
+                <label for="billAmount">Bill Amount ($)</label>
+                <input type="number" id="billAmount" placeholder="0.00" min="0" step="0.01">
+              </div>
+              <div class="calc-row">
+                <label>Tip (%)</label>
+                <div class="tip-buttons">
+                  <button class="tip-btn" data-tip="10">10%</button>
+                  <button class="tip-btn active" data-tip="15">15%</button>
+                  <button class="tip-btn" data-tip="20">20%</button>
+                  <button class="tip-btn" data-tip="25">25%</button>
+                </div>
+              </div>
+              <div class="calc-row">
+                <label>Split Between</label>
+                <div class="split-control">
+                  <button id="splitMinus" class="split-btn" aria-label="Decrease split">&minus;</button>
+                  <span id="splitCount">1</span>
+                  <button id="splitPlus" class="split-btn" aria-label="Increase split">+</button>
+                </div>
+              </div>
+              <div class="result-box">
+                <div class="result-row">
+                  <span>Tip Amount</span>
+                  <strong id="tipAmount">$0.00</strong>
+                </div>
+                <div class="result-row">
+                  <span>Total</span>
+                  <strong id="totalAmount">$0.00</strong>
+                </div>
+                <div class="result-row highlight">
+                  <span>Per Person</span>
+                  <strong id="perPerson">$0.00</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with vanilla HTML, CSS & JavaScript</p>
+  </footer>
+
+</body>
+</html>
