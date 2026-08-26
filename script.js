@@ -71,14 +71,14 @@ document.getElementById('textInput').addEventListener('input', updateWordCount);
 // ── Tip Calculator ──
 // Calculates tip, total, and per-person cost based on bill, tip %, and split count
 function calculateTip() {
-  const billAmount = document.getElementById('billAmount');
-  const tipAmount = document.getElementById('tipAmount');
-  const totalAmount = document.getElementById('totalAmount');
-  const perPerson = document.getElementById('perPerson');
+  const billInput = document.getElementById('billAmount');
+  const tipDisplay = document.getElementById('tipAmount');
+  const totalDisplay = document.getElementById('totalAmount');
+  const perPersonDisplay = document.getElementById('perPerson');
   const splitCount = document.getElementById('splitCount');
   const activeTip = document.querySelector('.tip-btn.active');
 
-  const bill = parseFloat(billAmount.value) || 0;
+  const bill = parseFloat(billInput.value) || 0;
   const tipPercent = parseFloat(activeTip.dataset.tip) || 0;
   const split = parseInt(splitCount.textContent) || 1;
 
@@ -86,9 +86,9 @@ function calculateTip() {
   const total = bill + tip;
   const per = total / split;
 
-  tipAmount.textContent = `$${tip.toFixed(2)}`;
-  totalAmount.textContent = `$${total.toFixed(2)}`;
-  perPerson.textContent = `$${per.toFixed(2)}`;
+  tipDisplay.textContent = `$${tip.toFixed(2)}`;
+  totalDisplay.textContent = `$${total.toFixed(2)}`;
+  perPersonDisplay.textContent = `$${per.toFixed(2)}`;
 }
 
 // Tip button selection
